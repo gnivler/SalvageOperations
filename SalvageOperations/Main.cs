@@ -83,7 +83,7 @@ namespace SalvageOperations
                 dataManager.MechDefs
                     .Where(x => !string.IsNullOrEmpty(x.Value.Chassis.Description.UIName) && x.Value.Chassis.Description.UIName == UIName &&
                     (Settings.MechsMustHaveSameMass && x.Value.Chassis.InitialTonnage == MechWeight)
-                    && (Settings.MechsMustHaveSameSpeed && x.Value.Chassis.TopSpeed == MechSpeed))
+                    && (Settings.MechsMustHaveSameSpeed && x.Value.Chassis.MovementCapDef.MaxWalkDistance == MechSpeed))
                     .Do(x => variants.Add(x.Value)); // thanks harmony for the do extension method
             }
             catch
