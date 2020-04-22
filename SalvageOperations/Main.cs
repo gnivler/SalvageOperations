@@ -76,7 +76,7 @@ namespace SalvageOperations
         private static List<MechDef> GetAllMatchingVariants(DataManager dataManager, string UIName)
         {
             var MechWeight = ExcludedVariantHolder.Chassis.InitialTonnage;
-            var MechSpeed = ExcludedVariantHolder.Chassis.TopSpeed;
+            var MechSpeed = ExcludedVariantHolder.Chassis.MovementCapDef.MaxWalkDistance;
             var variants = new List<MechDef>();
             try
             {
